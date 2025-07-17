@@ -44,6 +44,12 @@ print("Embeddings:", emb)
 
 ------
 
+## Limitations
+
+Currently, the model can only take data from time periods `2017-01` to `2021-12` (range of 60 months), and coming from
+`US`, `UK`, `CAN`, and `AUS`.
+The plan is to expand this range drastically in the next phase.
+
 ## Background
 
 The project aims to train sentence embedding models that are able to capture
