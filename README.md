@@ -14,7 +14,7 @@ pipeline_tag: sentence-similarity
 This is a [sentence-transformers](https://www.SBERT.net) model: It maps sentences & paragraphs to a 384 dimensional dense vector space and can be used for tasks like clustering or semantic search. It has a special addition, and that is the ability to incorporate spatiotemporal information into the embeddings.
 
 # Accessing the model
-You can get to the model on `HaidarJomaa/Space-Time-MiniLM-v0`.
+You can get to the model through my `HaidarJomaa/Space-Time-MiniLM-v0` HuggingFace repo.
 
 ## Usage (HuggingFace Transformers)
 You can use the model like this: First, you pass your input through the transformer model, then you get your spatiotemporal semantic embeddings.
