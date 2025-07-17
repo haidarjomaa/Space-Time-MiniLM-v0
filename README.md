@@ -26,18 +26,14 @@ model = SpaceTimeMiniLM.from_pretrained("HaidarJomaa/Space-Time-MiniLM-v0",
         config=config)
 
 sim = model.compute_similarity(
-    "The quick brown fox",
-    "A speedy auburn fox",
-    time1="2020-01", time2="2020-02",
-    space1="UK", space2="UK",
+    "The quick brown fox", "A speedy auburn fox",
+    time1="2020-01", time2="2020-02", space1="UK", space2="UK",
     tokenizer=tokenizer
 )
 print("Similarity:", sim)
 
-emb = model.embed_sentence(
-        "why is the sky blue?",
-        "2020-11",
-        "US",
+emb = model.embed_sentence("why is the sky blue?",
+        "2020-11", "US",
         tokenizer
 )
 print("Embeddings:", emb)
@@ -77,14 +73,18 @@ We fine-tuned this model on 2 custom datasets.
 1. The first dataset included triplets of:
 It was used to train the model on 3 tasks simultaneously: (Masked Language Modelling, Time Classification, Space Classification).
 [Refer to the paper for more information](https://drive.google.com/file/d/1pcz5ckoBkP4wQ7ojY5r14g1LXoYaqL_1/view?usp=drive_link)
-| Sentence                                                  | Time                                    | Space  |
-|--------------------------------------------------------|:----------------------------------------:|:--------------------------:|
-| "The weather in New York is going to be rainy this afternoon." | "2019-11"    | "US"    |
-2. The next step involved contrastive loss training on another dataset:
+
+| Sentence                                                       | Time      | Space     |
+|----------------------------------------------------------------|-----------|-----------|
+| "The weather in New York is going to be rainy this afternoon." | "2019-11" | "US"      |
+
+2. The next step involved contrastive loss training on another dataset:  
 The similarity in this case was constructed using a combination of the Time, Space, and Cosine Similarity.
-| Sentence1                 | Sentence2                 | Time1               | Time2                | Space1            | Space2            | Similarity            |
-|---------------------------|---------------------------|---------------------|----------------------|-------------------|-------------------|-----------------------|
-| "The quick brown fox" | "A speedy auburn fox" | "2020-01" | "2020-02"            | "UK"            | "UK"            | 0.91            |
+
+| Sentence1             | Sentence2             | Time1    | Time2    | Space1 | Space2 | Similarity |
+|-----------------------|-----------------------|----------|----------|--------|--------|------------|
+| "The quick brown fox" | "A speedy auburn fox" | 2020-01  | 2020-02  | UK     | UK     | 0.91       |
+
 
 #### Hyper parameters
 
