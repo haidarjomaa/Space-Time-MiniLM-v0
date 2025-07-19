@@ -105,3 +105,15 @@ We used the AdamW optimizer with a 2e-5 learning rate in the second stage.
 #### Training data
 
 We use the concatenation from multiple datasets to fine-tune our model. The total number of sentences is above 1 million sentences.
+
+## Citation
+
+If you use this model, please cite:
+```
+@misc{haidar2025spacetime,
+title={Space-Time MiniLM},
+author={Haidar Jomaa},
+year={2025},
+url={https://huggingface.co/HaidarJomaa/Space-Time-MiniLM-v0}
+}
+```
